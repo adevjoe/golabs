@@ -1,10 +1,10 @@
-package main
+package channel
 
 import (
 	"fmt"
 )
 
-func main() {
+func PrintLetter() {
 	ch1 := make(chan int)
 	ch2 := make(chan int)
 	done := make(chan bool)

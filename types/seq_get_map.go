@@ -1,4 +1,4 @@
-package main
+package types
 
 import (
 	"fmt"
@@ -33,13 +33,4 @@ func SeqGetMapBenchmark(N int, gc bool) {
 
 	fmt.Printf("Map Seq. Access. iterations: %v. %v us/op\n",
 		N, duration.Seconds()*1e6/float64(N))
-}
-
-func main() {
-	gc := true
-	SeqGetMapBenchmark(1000, gc)
-	SeqGetMapBenchmark(10000, gc)
-	SeqGetMapBenchmark(100000, gc)
-	SeqGetMapBenchmark(1000000, gc)
-	SeqGetMapBenchmark(10000000, gc)
 }

@@ -14,11 +14,11 @@ func main() {
 
 	// 实际业务代码
 	for {
-		Add("test")
+		add("test")
 	}
 }
 
-func Add(str string) string {
+func add(str string) string {
 	data := []byte(str)
 	sData := string(data)
 	var sum = 0

@@ -1,4 +1,4 @@
-package main
+package channel
 
 import (
 	"fmt"
@@ -21,7 +21,8 @@ func fibonacci(c, quit chan int) {
 	}
 }
 
-func main() {
+// PrintFibonacci ...
+func PrintFibonacci() {
 	c := make(chan int)
 	quit := make(chan int)
 	go func() {

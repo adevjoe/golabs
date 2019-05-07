@@ -1,4 +1,4 @@
-package main
+package channel
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func main() {
+func TaskConcurrent() {
 	time1 := time.Now()
 	task := make([]int, 0)
 	for i := 0; i < 5; i++ {
@@ -37,4 +37,3 @@ func main() {
 	}
 	fmt.Println(time.Since(time1))
 }
-

@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package types
 
 type Week int
 
@@ -21,8 +19,4 @@ func (w Week) String() string {
 		return names[w-1]
 	}
 	return "非法的星期名"
-}
-
-func main() {
-	fmt.Println(Wednesday)
 }

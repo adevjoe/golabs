@@ -1,4 +1,4 @@
-package main
+package syntax
 
 import "fmt"
 
@@ -24,13 +24,4 @@ func (s Student) Say() {
 
 func PrintPerson(i Person) {
 	i.Say()
-}
-
-func main() {
-	var (
-		s Student
-		d Doctor
-	)
-	PrintPerson(s)
-	PrintPerson(d)
 }

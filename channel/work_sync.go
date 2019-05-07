@@ -1,4 +1,4 @@
-package sync
+package channel
 
 import (
 	"fmt"
@@ -13,7 +13,7 @@ func worker(done chan int) {
 	fmt.Println(5, "go done")
 }
 
-func main() {
+func WorkSync() {
 	done := make(chan int) // 无缓冲，阻塞
 	go worker(done)
 	// 等待任务完成

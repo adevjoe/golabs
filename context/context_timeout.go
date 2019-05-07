@@ -1,9 +1,8 @@
-package main
+package context
 
 import (
 	"context"
 	"fmt"
-	"time"
 )
 
 func A(ctx context.Context) int {
@@ -45,20 +44,4 @@ func C(ctx context.Context) int {
 		return -3
 	}
 	return 3
-}
-
-func main() {
-	// 自动取消(定时取消)
-	{
-		timeout := 10 * time.Second
-		ctx, _ := context.WithTimeout(context.Background(), timeout)
-
-		fmt.Println("A 执行完成，返回：", A(ctx))
-		select {
-		case <-ctx.Done():
-			fmt.Println("context Done")
-			break
-		}
-	}
-	time.Sleep(20 * time.Second)
 }

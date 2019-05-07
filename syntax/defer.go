@@ -1,15 +1,7 @@
-package main
+package syntax
 
 import "fmt"
 
-func main() {
-	defer func() {
-		if x := recover(); x != nil {
-			fmt.Println("recover from main:", x)
-		}
-	}()
-	f1()
-}
 func f1() {
 	defer func() {
 		if x := recover(); x != nil {
