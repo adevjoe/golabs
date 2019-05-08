@@ -1,3 +1,3 @@
-module github.com/adevjoe/go-test
+module github.com/adevjoe/golabs
 
 go 1.12
