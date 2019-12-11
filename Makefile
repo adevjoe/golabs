@@ -1,4 +1,4 @@
-PACKAGES = ./channel ./context ./syntax ./testing ./types
+PACKAGES = ./channel ./context ./syntax ./testing ./types ./tips...
 
 .PHONY: all
 all: lib fmt test
