@@ -2,7 +2,7 @@ PACKAGES = ./channel ./context ./syntax ./testing ./types ./tips...
 OUTPUT = ./output
 
 .PHONY: all
-all: lib fmt test
+all: check-dir lib fmt test
 	@echo "All done."
 
 test:
