@@ -1,4 +1,5 @@
 PACKAGES = ./channel ./context ./syntax ./testing ./types ./tips...
+OUTPUT = ./output
 
 .PHONY: all
 all: lib fmt test
@@ -6,7 +7,7 @@ all: lib fmt test
 
 test:
 	@echo "testing..."
-	@go test -race -cover $(PACKAGES)
+	@go test -race -coverprofile ./output/coverage.out $(PACKAGES)/...
 
 fmt:
 	@./fmt.sh
@@ -16,3 +17,9 @@ lint:
 
 lib:
 	@go mod download
+
+check-dir:
+	@if [ ! -d $(OUTPUT) ]; then mkdir $(OUTPUT); fi
+
+clean:
+	@rm -rf $(OUTPUT)
