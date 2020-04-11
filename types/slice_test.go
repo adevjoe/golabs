@@ -14,7 +14,6 @@ func TestCovert(t *testing.T) {
 	fmt.Println("s1:", s1, "s2:", s2)
 }
 
-<<<<<<< HEAD
 func TestSliceIter(t *testing.T) {
 	s := []int{1, 2, 3}
 	fmt.Println(s)
@@ -27,7 +26,7 @@ func TestSliceDelete(t *testing.T) {
 	fmt.Println(s)
 	SliceDelete(s)
 	fmt.Println(s)
-=======
+}
 func TestCopy(t *testing.T) {
 	a := []int64{4, 2, 1}
 
@@ -45,5 +44,4 @@ func TestCopy(t *testing.T) {
 	fmt.Printf("c: %v, point: %p, size: %v\n", c, c, unsafe.Sizeof(c))
 	fmt.Printf("d: %v, point: %p, size: %v\n", d, &d, unsafe.Sizeof(d))
 	fmt.Printf("e: %s, point: %p, size: %v\n", e, e, unsafe.Sizeof(e))
->>>>>>> 168eb536f35dff6057bb4392de9713c18782f938
 }
