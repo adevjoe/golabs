@@ -12,3 +12,17 @@ func TestCovert(t *testing.T) {
 	Covert(s1, s2)
 	fmt.Println("s1:", s1, "s2:", s2)
 }
+
+func TestSliceIter(t *testing.T) {
+	s := []int{1, 2, 3}
+	fmt.Println(s)
+	SliceIter(s)
+	fmt.Println(s)
+}
+
+func TestSliceDelete(t *testing.T) {
+	s := []int{1, 2, 3}
+	fmt.Println(s)
+	SliceDelete(s)
+	fmt.Println(s)
+}
