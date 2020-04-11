@@ -1,4 +1,8 @@
 .idea
 *.iml
 go.sum
+<<<<<<< HEAD
 tmptest
+=======
+output
+>>>>>>> 168eb536f35dff6057bb4392de9713c18782f938

@@ -15,7 +15,7 @@ func TestRWMutex(t *testing.T) {
 	for i := 1; i < 10; i++ {
 		go func(i int) {
 			lock.Lock()
-			fmt.Printf("Lock: from go routine %d: a = %d\n",i, a)
+			fmt.Printf("Lock: from go routine %d: a = %d\n", i, a)
 			time.Sleep(time.Second)
 			lock.Unlock()
 		}(i)
@@ -26,11 +26,11 @@ func TestRWMutex(t *testing.T) {
 	for i := 11; i < 20; i++ {
 		go func(i int) {
 			lock.RLock()
-			fmt.Printf("RLock: from go routine %d: b = %d\n",i, b)
+			fmt.Printf("RLock: from go routine %d: b = %d\n", i, b)
 			time.Sleep(time.Second)
 			lock.RUnlock()
 		}(i)
 	}
 
-	<-time.After(time.Second*20)
+	<-time.After(time.Second * 20)
 }
