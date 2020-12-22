@@ -26,3 +26,13 @@ func SliceDelete(s []int) {
 	}
 	s[1] = -1
 }
+
+func AppendSlice(s []int) {
+	s = append(s, 1)
+}
+
+func ChangeSlice(s []int) {
+	if len(s) > 0 {
+		s[0] = 10
+	}
+}

@@ -45,3 +45,15 @@ func TestCopy(t *testing.T) {
 	fmt.Printf("d: %v, point: %p, size: %v\n", d, &d, unsafe.Sizeof(d))
 	fmt.Printf("e: %s, point: %p, size: %v\n", e, e, unsafe.Sizeof(e))
 }
+
+func TestAppendSlice(t *testing.T) {
+	s := []int{2}
+	AppendSlice(s)
+	fmt.Println(s) // Output: [2]
+}
+
+func TestChangeSlice(t *testing.T) {
+	s := []int{1}
+	ChangeSlice(s) // set s[0] = 10
+	fmt.Println(s) // Output: [10]
+}
