@@ -4,33 +4,38 @@ import (
 	"fmt"
 	"sync"
 	"testing"
-	"time"
 )
 
-func TestRWMutex(t *testing.T) {
-	a := 0
-
-	lock := sync.RWMutex{}
-
-	for i := 1; i < 10; i++ {
-		go func(i int) {
-			lock.Lock()
-			fmt.Printf("Lock: from go routine %d: a = %d\n", i, a)
-			time.Sleep(time.Second)
-			lock.Unlock()
-		}(i)
+func TestMutex(t *testing.T) {
+	lock := sync.Mutex{}
+	value := 0
+	increment := func() {
+		defer lock.Unlock()
+		lock.Lock()
+		value++
+		fmt.Printf("incrementing, value is %d\n", value)
+	}
+	decrement := func() {
+		defer lock.Unlock()
+		lock.Lock()
+		value--
+		fmt.Printf("decrementing, value is %d\n", value)
 	}
 
-	b := 0
-
-	for i := 11; i < 20; i++ {
-		go func(i int) {
-			lock.RLock()
-			fmt.Printf("RLock: from go routine %d: b = %d\n", i, b)
-			time.Sleep(time.Second)
-			lock.RUnlock()
-		}(i)
+	wg := sync.WaitGroup{}
+	for i := 0; i < 5; i++ {
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+			increment()
+		}()
 	}
-
-	<-time.After(time.Second * 20)
+	for i := 0; i < 5; i++ {
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+			decrement()
+		}()
+	}
+	wg.Wait()
 }
