@@ -7,6 +7,7 @@ all: check-dir lib fmt test
 
 test:
 	@echo "testing..."
+	@mkdir -p output
 	@go test -race -coverprofile ./output/coverage.out $(PACKAGES)/...
 
 fmt:

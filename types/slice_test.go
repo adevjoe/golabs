@@ -57,3 +57,17 @@ func TestChangeSlice(t *testing.T) {
 	ChangeSlice(s) // set s[0] = 10
 	fmt.Println(s) // Output: [10]
 }
+
+func TestGrow(t *testing.T) {
+	a := []int{1, 2, 3, 4}
+	fmt.Printf("%p\n", a)
+	a = append(a, []int{5, 6, 7, 8}...)
+	fmt.Printf("%p\n", a)
+	b := make([]int, 5, 10)
+	b[1] = 1
+	fmt.Println(b, cap(b))
+	fmt.Printf("%p\n", b)
+	b = append(b, 5)
+	fmt.Println(b, cap(b))
+	fmt.Printf("%p\n", b)
+}
